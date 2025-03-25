@@ -283,7 +283,7 @@ function showAgeVerificationPopup() {
 
 const translations = {
   tr: {
-    title: "AdaBohem - Anasayfa",
+    title: "AdaBohem - Katalog",
     home: "Anasayfa",
     products: "Ürünler",
     contact: "İletişim",
@@ -307,7 +307,7 @@ const translations = {
       "&copy; 2025 AdaBohem. <br>Tüm Hakları Saklıdır.<br> AdaBohem bir <a href='http://www.bahcivanlar.com.tr' target='_blank' class='bahcivanlar-link'>Bahçıvanlar Grup</a> şirketidir.",
   },
   en: {
-    title: "AdaBohem - Homepage",
+    title: "AdaBohem - Catalog",
     home: "Home",
     products: "Products",
     contact: "Contact",
