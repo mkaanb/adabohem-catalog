@@ -155,6 +155,8 @@ async function loadCategoryData(category) {
   } else {
     console.warn("Catalog data not available, fetching again...");
     await fetchCatalogData(); // Fetch again if not stored
+    console.log('Fetched again.');
+    await loadCategoryData(category);
   }
 }
 
