@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdaBohem - Lüleler</title>
+    <link rel="stylesheet" href="styles-products.css" />
+    <script src="script.js"></script>
+    <script defer src="script-products.js"></script>
+    <link rel="icon" href="/images/logo-icon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/images/logo-icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="cat-index.html">
+          <img src="images/bohem.gif" alt="AdaBohem Logo" class="logo" />
+      </a>
+      <nav>
+          <ul class="nav-links">
+              <li><a href="cat-index.html" class="active" data-key="home">Anasayfa</a></li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-key="products">Ürünler</a> <!-- Clickable for mobile -->
+                  <ul class="dropdown-menu">
+                      <li><a href="hookahs.html" data-key="hookahs">Nargile Takımı</a></li>
+                      <li><a href="bowls.html" data-key="bowls">Lüle</a></li>
+                      <li><a href="hmds.html" data-key="hmds">Közlük</a></li>
+                      <li><a href="hoses.html" data-key="hoses">Marpuç</a></li>
+                      <li><a href="others.html" data-key="others">Diğer Aksesuarlar</a></li>
+                      <li><a href="smyrna.html" data-key="smyrna">Smyrna</a></li>
+                      <li><a href="smogmoon.html" data-key="smogmoon">Smogmoon</a></li>
+                      <li><a href="alfakher.html" data-key="alfakher">Al Fakher</a></li>
+                      <li><a href="jibiar.html" data-key="jibiar">Jibiar</a></li>
+                  </ul>
+              </li>
+              <li><a href="#contact" data-key="contact">İletişim</a></li>
+              <li><img id="language-toggle" src="images/uk-flag.png" alt="Switch to English" class="flag-icon"></li>
+          </ul>
+      </nav>
+  
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle"><img src="images/hambicon.png" class="hamb"></button>
+  </header>    
+
+    <main>
+      <section class="category-name" 
+        data-bg-desktop="images/banners/desktop/bowls.png"
+        data-bg-mobile="images/banners/mobile/bowls.png">
+        <h2 data-key="bowls">Lüleler</h2>
+      </section>
+      <section class="product-list">
+        <h2>Bu kategoride uygun ürün bulunmamaktadır.</h2>
+      </section>
+      <div id="popup" class="popup">
+        <img id="popup-img" src="" alt="Product Image">
+    </div>
+    </main>
+
+    <footer>
+      <p data-key="footer">
+        &copy; 2025 AdaBohem. <br />Tüm Hakları Saklıdır.<br />
+        AdaBohem bir
+        <a
+          href="http://www.bahcivanlar.com.tr"
+          target="_blank"
+          class="bahcivanlar-link"
+          >Bahçıvanlar Grup</a
+        >
+        şirketidir.
+      </p>
+    </footer>
+    <div id="age-verification-popup" class="popup">
+      <div class="popup-content">
+        <div class="button-container">
+          <button id="yes-button" class="yes-button">18 Yaşından Büyüğüm</button>
+          <button id="no-button" class="no-button">18 Yaşından Küçüğüm</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

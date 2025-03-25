@@ -1,0 +1,533 @@
+/* General styles */
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600&display=swap");
+
+body {
+  font-family: "Dosis", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #e3d0d8, #b1799f);
+  cursor: url(images/arrowhead.png), auto;
+}
+
+a {
+  cursor: url(images/arrowhead2.png), auto;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: white;
+  position: sticky;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  color: #84245c;
+  top: 0px;
+}
+
+
+.logo {
+  height: 80px; /* Increased size for website logo */
+  align-items: left;
+}
+
+.menu-toggle {
+  color: white;
+  border: 0px;
+  background-color: white;
+  display: none;
+}
+
+.hamb {
+  height: 40px;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: #84245c;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 20px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Desktop Dropdown Styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  color: black;
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  top: 100%;
+  width: 200%;
+  left: -50%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 5px 0;
+}
+
+.dropdown-menu li a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header {
+    display: flex !important;
+    justify-content: space-between; /* Keeps nav on left, logo on right */
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+
+  .nav-links {
+    display: none; /* Hide menu by default */
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #84245c;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0px;
+    color: #84245c;
+  }
+
+  /* Show menu button */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* When menu is active (open) */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* 📌 Fix: Display submenu items below "Ürünler" */
+  .dropdown-menu {
+    display: block !important; /* Always visible in mobile menu */
+    position: static; /* Remove absolute positioning */
+    background: transparent; /* No background */
+    padding-left: 0px; /* Indent items */
+    width: auto; /* Remove forced width */
+  }
+
+  .dropdown-menu li {
+    text-align: left; /* Align submenu items */
+    padding-left: 40px;
+  }
+
+  .dropdown-menu li a {
+    color: #84245c; /* Make text visible */
+    font-size: 16px;
+  }
+}
+
+.flag-icon {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer; /* Makes it clickable */
+  margin-left: 10px;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 10%;
+  cursor: url(images/arrowhead2.png), auto;
+  margin-top: 5px;
+}
+
+.flag-icon:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  top: 0px;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures video covers the whole section */
+  position: relative;
+  top: 0;
+  left: 0;
+  object-position: top;
+}
+
+/* Categories section */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.category {
+  width: 300px;
+  text-align: center;
+  background-color: white;
+  padding: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.category img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+  transition: opacity 0.6s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.category .hover-image {
+  opacity: 0;
+}
+
+.category:hover .hover-image {
+  opacity: 1;
+}
+
+.category:hover .default-image {
+  opacity: 0;
+}
+
+.category h3 {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#contact {
+  background: #84245c;
+  color: #e3d0d8;
+  padding: 40px 20px;
+  cursor: url("images/arrowhead3.png"), auto;
+  text-align: center;
+}
+
+.contact-locations {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.location {
+  flex: 1;
+  max-width: 45%; /* Ensures locations take up equal space */
+  min-width: 300px; /* Ensures responsiveness for smaller screens */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location:nth-child(1) {
+  align-items: flex-start; /* Align the first map to the left */
+}
+
+.location:nth-child(2) {
+  align-items: flex-end; /* Align the second map to the right */
+}
+
+.location iframe {
+  width: 100%;
+  height: 400px;
+  max-width: 600px;
+  border: 0;
+  margin-top: 10px;
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+#contact h3 {
+  text-align: center;
+  display: block;
+  font-size: 24px;
+}
+
+#contact p {
+  margin-bottom: 10px; /* Original margin restored */
+  text-align: left;
+  margin-top: -10px;
+}
+
+#contact a {
+  text-decoration: underline;
+  color: #e3d0d8;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: -20px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.insta-icon {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.insta-icon img {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .contact-locations {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align locations */
+    text-align: center; /* Center text */
+  }
+
+  .location {
+    max-width: 100%; /* Take full width */
+    min-width: unset; /* Remove minimum width restriction */
+    align-items: center !important; /* Ensure center alignment */
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .location iframe {
+    height: 300px; /* Reduce map height for smaller screens */
+    max-width: 100%; /* Ensure maps don’t overflow */
+  }
+
+  #contact p {
+    text-align: center; /* Center paragraphs */
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #b1799f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+body.blurred > *:not(#age-verification-popup) {
+  filter: blur(5px); /* Blurs all elements except the pop-up */
+  pointer-events: none; /* Disables interactions with the blurred content */
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  width: 90vw;
+  max-width: 90vh;
+  background-image: url("images/age-rest.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  z-index: 1001;
+  height: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.button-container {
+  position: absolute; /* Fix button placement inside the image */
+  bottom: 3%; /* Adjust this percentage as needed */
+  left: 50%;
+  transform: translateX(-50%); /* Center the button container */
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.yes-button,
+.no-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.yes-button:hover,
+.no-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.yes-button {
+  background-color: #7fbc34;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .yes-button,
+  .no-button {
+    padding: 8px 16px;
+    font-size: 3vw;
+    width: 30vw;
+    height: 12vw;
+  }
+}
+
+/* Full-screen overlay */
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9); /* Light background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #84245c #84245c transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #7ebd10 #7ebd10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #5a173b #5a173b transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
