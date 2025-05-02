@@ -74,6 +74,15 @@ function setupTranslations() {
 // Fetch Data //
 
 async function fetchCatalogData() {
+  const TIMESTAMP_KEY = "catalogTimestamp";
+  const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+  const lastFetch = localStorage.getItem("catalogTimestamp");
+  const now = Date.now();
+
+
+  if (!lastFetch || now - parseInt(lastFetch, 10) > CACHE_DURATION) {
+    localStorage.setItem("catalogTimestamp", now.toString());
+    console.log("Fetched.")
   try {
     const response = await fetch(
       "https://catalog-data-fetch.onrender.com/api/catalog"
@@ -109,6 +118,7 @@ async function fetchCatalogData() {
     console.error("Error fetching catalog data:", error);
   }
 }
+}
 
 // Set Category Data //
 
@@ -143,7 +153,7 @@ function setCategoryData() {
 
 async function loadCategoryData(category) {
   const storedSections = localStorage.getItem("catalogSections");
-
+  await fetchCatalogData(); // Fetch again to check TS
   if (storedSections) {
     const sections = JSON.parse(storedSections);
     if (sections[category] && Array.isArray(sections[category]) && sections[category].length > 0) {
